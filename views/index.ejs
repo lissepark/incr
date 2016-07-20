@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Logo Example</title>
+  <link rel="stylesheet" type="text/css" href="css/pure.css">
+  <link href="iconfont/material-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/materialize.css" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen,projection">
+
+<style>
+#redsquare, #bluesquare, #geensquare {
+	margin-right:1px;
+	margin-bottom: 0px;
+	padding:0px;
+}
+#above {
+	position: absolute;
+	z-index: 5;
+	margin: 3px;
+}
+#emblem {
+	position: relative;
+	border:1px solid #ccffcc;
+	padding:2px;
+	width:68px;
+	background-color:#e3dbf1;
+}
+.slogan {
+	font-size: 16px;
+	font-style: italic;
+	float:right;
+}
+.logo-name {
+	font-size: 22px;
+	font-weight:600 !important;
+	margin-top: 0px;
+	line-height: 1 !important;
+}
+
+.custom-wrapper {
+    background-color: #e3dbf1;
+    line-height: 1 !important;
+    margin-bottom: 0.1em;
+    -webkit-font-smoothing: antialiased;
+    height: 7.4em;
+    overflow: hidden;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+.custom-wrapper.open {
+    height: 26em;
+    line-height: 0.8 !important;
+}
+
+.custom-menu-3 {
+    text-align: right;
+    line-height: 0.8 !important;
+}
+
+.custom-toggle {
+    width: 34px;
+    height: 34px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.custom-toggle .bar {
+    background-color: #777;
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 100px;
+    position: absolute;
+    top: 18px;
+    right: 7px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.custom-toggle .bar:first-child {
+    -webkit-transform: translateY(-6px);
+    -moz-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+}
+
+.custom-toggle.x .bar {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.custom-toggle.x .bar:first-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 47.999em) {
+    .custom-menu-3 {
+        text-align: left;
+    }
+    .custom-toggle {
+        display: block;
+    }
+}
+</style>
+</head>
+<body>
+<!--  Scripts-->
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUw_teilajCc7EZghjl75wKJY1yAO7jfA&callback=initialize"></script>
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/grids-responsive.css">
+<!--<![endif]-->
+		
+		<div class="custom-wrapper pure-g" id="menu">
+		    <div class="pure-u-1 pure-u-md-1-3">
+		        <div class="pure-menu" style="padding-left:40px;">
+		            <a href="#" class="pure-menu-heading custom-brand">
+
+		            	<canvas id="above" width='68' height='64'></canvas>
+						<div id="emblem">
+							<canvas style="float:left;" id="redsquare" width='20' height='64'></canvas>
+							<canvas style="float:left;" id="bluesquare" width='20' height='64'></canvas>
+							<canvas id="geensquare" width='20' height='64'></canvas>			
+							<div style="clear:both;margin:0px;"></div>
+							
+							
+
+							<div class="logo-name" style="text-transform:none:">IncrIT</div>
+						</div>
+
+		            </a>
+		            <a href="#" class="custom-toggle" id="toggle">
+			            <s class="bar"></s>
+			            <s class="bar"></s>
+			            <s class="bar"></s>
+		            </a>
+		        </div>
+		    </div>
+		    <div class="pure-u-1 pure-u-md-1-3">
+		        <div class="pure-menu pure-menu-horizontal custom-can-transform">
+		            <ul class="pure-menu-list">
+		                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
+		                <li class="pure-menu-item"><a href="#about" class="pure-menu-link">About</a></li>
+		                <li class="pure-menu-item"><a href="#contacts" class="pure-menu-link">Contact</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		    <div class="pure-u-1 pure-u-md-1-3">
+		        <div class="pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform">
+		            <ul class="pure-menu-list">
+		                <li class="pure-menu-item"><a href="#" class="pure-menu-link2"><img src="images/United-Kingdom-icon.png"></a></li>
+		                <li class="pure-menu-item"><a href="#" class="pure-menu-link2"><img src="images/Ukraine-icon.png"></a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link2"><img src="images/Russia-icon.png"></a></li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+
+			<script>
+				var redcanvas = document.getElementById("redsquare");
+				var bluecanvas = document.getElementById("bluesquare");
+				var greencanvas = document.getElementById("geensquare");
+				var redcontext = redcanvas.getContext("2d");
+				var bluecontext = bluecanvas.getContext("2d");
+				var greencontext = greencanvas.getContext("2d");
+				redcontext.fillStyle = "#f25e42";
+				bluecontext.fillStyle = "#888fff";
+				greencontext.fillStyle = "#88e57b";
+
+				redcontext.beginPath();
+				bluecontext.beginPath();
+				greencontext.beginPath();
+
+				redcontext.moveTo(25,44);
+				redcontext.arcTo(10,50,0,50,50);
+				redcontext.lineTo(0,70);
+				redcontext.lineTo(20,70);
+				redcontext.lineTo(20,40);
+
+				bluecontext.moveTo(28,30);
+				bluecontext.arcTo(10,45,-5,46,40);
+				bluecontext.lineTo(0,70);
+				bluecontext.lineTo(20,70);
+				bluecontext.lineTo(20,28);
+
+				greencontext.moveTo(20,0);
+				greencontext.arcTo(10,55,0,52,41);
+				greencontext.lineTo(0,70);
+				greencontext.lineTo(20,70);
+				greencontext.lineTo(20,0);
+
+				redcontext.fill();
+				bluecontext.fill();
+				greencontext.fill();
+
+				var abovecanvas = document.getElementById("above");
+				var abovecontext = abovecanvas.getContext("2d");
+				abovecontext.fillStyle = "#fded99";
+				abovecontext.beginPath();
+
+				abovecontext.moveTo(60,0);
+				abovecontext.arcTo(35,60,15,52,65);
+				abovecontext.lineTo(0,35);
+				abovecontext.arcTo(35,60,60,0,55);
+				abovecontext.fill();
+			</script>
+		<script>
+			(function (window, document) {
+			var menu = document.getElementById('menu'),
+			    WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
+
+			function toggleHorizontal() {
+			    [].forEach.call(
+			        document.getElementById('menu').querySelectorAll('.custom-can-transform'),
+			        function(el){
+			            el.classList.toggle('pure-menu-horizontal');
+			        }
+			    );
+			};
+
+			function toggleMenu() {
+			    // set timeout so that the panel has a chance to roll up
+			    // before the menu switches states
+			    if (menu.classList.contains('open')) {
+			        setTimeout(toggleHorizontal, 500);
+			    }else {
+			        toggleHorizontal();
+			    }
+			    menu.classList.toggle('open');
+			    document.getElementById('toggle').classList.toggle('x');
+			};
+
+			function closeMenu() {
+			    if (menu.classList.contains('open')) {
+			        toggleMenu();
+			    }
+			}
+
+			document.getElementById('toggle').addEventListener('click', function (e) {
+			    toggleMenu();
+			});
+
+			window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
+			})(this, this.document);
+
+		</script>
+
+
+		<!-- <div class="slogan">... to be the eyewitness of the <span style='color:red'>incredible technological</span> progress ...</div> -->
+<div style="clear:both;"></div>
+
+
+ <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">State-Of-The-Art Technology</h1>
+        <div class="row center">
+          <h3 class="header col s12 light">... to be the eyewitness of the <span style='color:red'>incredible technological</span> progress ...</h3>
+        </div>
+        <div class="row center">
+          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/hightech.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section"><a name="about"></a>
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">laptop</i></h2>
+            <h5 class="center">Web</h5>
+
+            <p class="light">The scope of services for the development of web-sites, applications, online stores and portals based on your goals and needs, using Java, PHP, Node.js, JavaScript, AngularJS.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons ">smartphone</i></h2>
+            <h5 class="center">Mobile</h5>
+
+            <p class="light">Design interfaces and mobile apps for iOS, Android, Windows Phone.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">thumb_up</i></h2>
+            <h5 class="center">Quality Assurance</h5>
+
+            <p class="light">Testing of web, mobile and desktop applications, as well as quality control at all stages of development. The issue of quality of decisions as scheduled.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Just for example</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/build.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center"><a name="contacts"></a>
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+
+		<div class="pure-g">
+		    <div class="pure-u-7-24"><p>www.incrit.com<br>e-mail:info@incrit.com</p></div>
+		    <div class="pure-u-17-24">
+		    	<div id="googleMap" style="width:300px;height:280px;"></div>
+			</div>
+		</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(50.457404,30.518236),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Just for example</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/flow.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of ....</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div id="years" class="container"></div>
+    </div>
+    <script type="text/javascript">
+    var yearsdiv = document.getElementById('years');
+    var today = new Date();
+    var year = today.getFullYear();
+    yearsdiv.innerHTML = "Made by <a class='lime-text text-lighten-3' href='#''>IncrIT</a> © 2011 - "+year;
+    </script>
+  </footer>
+</body>
+</html>
